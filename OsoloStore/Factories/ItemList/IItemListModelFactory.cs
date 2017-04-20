@@ -6,6 +6,6 @@ namespace OsoloStore.Factories
 {
     public interface IItemListModelFactory
     {
-        ItemListModel Create(IQueryable<Item> items, bool summary);
+        ItemListModel Create(IQueryable<Item> items, bool orderActivated = false);
     }
 }

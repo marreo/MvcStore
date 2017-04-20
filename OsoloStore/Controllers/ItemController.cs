@@ -21,7 +21,7 @@ namespace OsoloStore.Controllers
         public ActionResult Get()
         {
             var items = _storeContext.Item.Take(10);
-            var model = _itemListModelFactory.Create(items);
+            var model = _itemListModelFactory.Create(items, true);
             return PartialView("ItemList", model);
         }
     }

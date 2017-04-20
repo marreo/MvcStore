@@ -7,11 +7,11 @@ namespace OsoloStore.Factories
 {
     public class ItemListModelFactory : IItemListModelFactory
     {
-        public ItemListModel Create(IQueryable<Item> items, bool summary = false)
+        public ItemListModel Create(IQueryable<Item> items, bool orderActivated = false)
         {
             var model = new ItemListModel();
             model.Items = new List<ItemModel>();
-            model.Summary = summary;
+            model.OrderActivated = orderActivated;
 
             foreach (var item in items)
             {

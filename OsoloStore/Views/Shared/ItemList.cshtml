@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-2">
                     <small class="store-item--price">@item.Price</small>
-                    @if (Model.Summary)
+                    @if (Model.OrderActivated)
                     {
                         <div class="btn btn-sm btn-outline-success store-button--add-item" data-item-id="@item.Id">+</div>
                     }
