@@ -1,0 +1,25 @@
+﻿@model OsoloStore.Models.ItemListModel
+
+<div class="list-group">
+    @if (Model != null && Model.Items != null && Model.Items.Count > 0)
+    {
+        foreach (var item in Model.Items)
+        {
+            <div class="list-group-item list-group-item-action store-item">
+                <div class="col-2">
+                    <img class="store-item--img" src="~/Assets/img/@item.ImageUrl" />
+                </div>
+                <div class="col-8">
+                    <h5 class="mb-1 store-item--name">@item.Name</h5>
+                </div>
+                <div class="col-2">
+                    <small class="store-item--price">@item.Price</small>
+                    @if (Model.Summary)
+                    {
+                        <div class="btn btn-sm btn-outline-success store-button--add-item" data-item-id="@item.Id">+</div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
