@@ -9,7 +9,6 @@ namespace OsoloStore.App_Start
             bundles.Add(new ScriptBundle("~/bundles/scripts")
                 .Include("~/Scripts/jquery-{version}.js")
                 .Include("~/Scripts/bootstrap.js")
-                .Include("~/Scripts/toastr.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/scripts/custom")
