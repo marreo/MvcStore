@@ -1,4 +1,5 @@
-﻿using OsoloStore.Db;
+﻿using Microsoft.AspNet.Identity;
+using OsoloStore.Db;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -16,8 +17,9 @@ namespace OsoloStore.Controllers
         [HttpPost]
         public bool Add(int id)
         {
+            var userId = User.Identity.GetUserId();
             //Find basket
-            var basketItemList = _storeContext.BasketItem.Where(a => a.Basket.UserId == 1); //TODO:Auth -  Add UserId from current login user
+            var basketItemList = _storeContext.BasketItem.Where(a => a.Basket.UserId == userId);
 
             //If basket exists
             if (basketItemList.Count() > 0 )
@@ -38,7 +40,7 @@ namespace OsoloStore.Controllers
                     ItemId = id,
                     Basket = new Basket
                     {
-                        UserId = 1
+                        UserId = User.Identity.GetUserId()
                     }
                 });
             }
@@ -61,7 +63,7 @@ namespace OsoloStore.Controllers
         public bool Remove(int id)
         {
             //Basket exist for user?
-            var currUserBasket = _storeContext.Basket.FirstOrDefault(a => a.UserId == 1); //TODO:Auth -  Add UserId from current login user
+            var currUserBasket = _storeContext.Basket.FirstOrDefault(a => a.UserId == User.Identity.GetUserId());
 
             if (currUserBasket != null)
             {

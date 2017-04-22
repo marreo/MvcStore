@@ -1,5 +1,6 @@
 namespace OsoloStore.Db
 {
+    using System;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Basket")]
@@ -7,6 +8,6 @@ namespace OsoloStore.Db
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

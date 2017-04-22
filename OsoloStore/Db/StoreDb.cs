@@ -4,7 +4,7 @@ namespace OsoloStore.Db
 
     public partial class StoreDb : DbContext
     {
-        //TODO: Make Interface of StoreDb to be able to Moq it, can make all controllers "testable"
+        //TODO: Make Resposity in a layer before the context to be able to Moq it, can make all controllers "testable"
         public StoreDb()
             : base("name=StoreDb")
         {

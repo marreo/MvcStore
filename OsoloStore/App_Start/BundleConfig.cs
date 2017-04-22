@@ -11,6 +11,9 @@ namespace OsoloStore.App_Start
                 .Include("~/Scripts/bootstrap.js")
                 );
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.validate*"));
+
             bundles.Add(new ScriptBundle("~/bundles/scripts/custom")
                 .Include("~/Assets/Scripts/store-items.js")
                 .Include("~/Assets/Scripts/store-order.js")
